@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>welcome</ion-title>
-  </ion-toolbar>
+<ion-header>
+ 
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">welcome</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding ion-text-center">
+  <div class="container">
+    <div class="page-header">
+      <h1>Welcome to Herb-E-List</h1>
+      <h3>Explore Us</h3>
+    </div>
+
+    <img>
+
+    <div class="button-container">
+      <ion-button expand="block" class="main-button" routerLink="/login" routerDirection="forward">Log in</ion-button>
+      <ion-button expand="block" color="dark" fill="clear" routerLink="/signup" routerDirection="forward">Signup</ion-button>
+    </div>
+  </div>
 </ion-content>

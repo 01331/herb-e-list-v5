@@ -56,3 +56,37 @@
 * {
     font-family: 'SegoeUI';
 }
+
+.main-button {
+    --background: linear-gradient(90deg, #006600, #00C14A);
+    --box-shadow: none;
+    position: relative;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.main-button::after {
+    content: " ";
+    position: absolute;
+    width: 80%;
+    right: 10%;
+    bottom: 0;
+    top: 10px;
+    height: 40px;
+    z-index: -1;
+    box-shadow: 0px 20px 20px -17px #005500;
+}
+
+// Removing ion-button focus outline
+ion-button:focus {
+    outline: none !important;
+}
+
+ion-buttons:focus {
+    outline: none !important;
+}
+
+// Removing iOS and Android Header line for entire app
+ion-toolbar {
+    --border-width: 0 !important;
+}

@@ -1,5 +1,7 @@
 {
   "name": "catalog-v5",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

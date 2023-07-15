@@ -1,14 +1,15 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button class="backbtn" routerLink="/welcome" routerDirection="back">
         <ion-icon name="chevron-back-outline"></ion-icon>
+        Back
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content [fullscreen]="true">
   <div class="ion-padding container">
     <h1>Login</h1>
 

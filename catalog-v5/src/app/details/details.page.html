@@ -1,7 +1,7 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="translucent">
     <ion-buttons slot="start">
-      <ion-button class="backbtn" routerLink="/inventory" routerDirection="back">
+      <ion-button class="backbtn" color="primary" routerLink="/tabs/tab1" routerDirection="back">
         <ion-icon name="chevron-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -9,9 +9,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-img src="../../assets/productPics/{{pic}}"></ion-img>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary" size="large">{{name}}</ion-card-title>
+      <ion-card-subtitle>Php {{price}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item><ion-label style="font-weight: 600;">Brand</ion-label>{{brand}}</ion-item>
+        <ion-item><ion-label style="font-weight: 600;">Type</ion-label>{{type}}</ion-item>
+        <ion-item><ion-label style="font-weight: 600;">Dosage</ion-label>{{dosage}}</ion-item>
+        <ion-item><ion-text>{{desc}}</ion-text></ion-item>
+      </ion-list>
+          
+       
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

@@ -17,6 +17,7 @@ export class InventoryPage implements OnInit {
   getProducts(){
     this.http.get('http://localhost/herb-e-list-v5/backend/getProducts.php').subscribe((response)=>{
       console.log(response);
+      this.products = response;
     });
   }
 

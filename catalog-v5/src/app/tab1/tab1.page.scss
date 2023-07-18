@@ -33,3 +33,20 @@
         color: #656565;
     }
 }
+
+ion-card {
+    margin: 0px 10px 20px 10px !important;
+}
+
+ion-card-title {
+    font-size: 20px !important;
+}
+
+.productImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}

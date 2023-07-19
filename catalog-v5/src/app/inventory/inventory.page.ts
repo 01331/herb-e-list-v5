@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./inventory.page.scss'],
 })
 export class InventoryPage implements OnInit {
+
   products : any = [];
   constructor(private http: HttpClient) { }
 

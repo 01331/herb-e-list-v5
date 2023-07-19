@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -9,7 +10,7 @@ import { NavController } from '@ionic/angular';
 export class DetailsPage implements OnInit {
 
   id: any;
-  branch: any;
+  branchid: any;
   name: any;
   brand: any;
   dosage: any;
@@ -20,9 +21,11 @@ export class DetailsPage implements OnInit {
   avail: any;
   pic: any;
 
-  constructor(public nav: NavController) {
+  branches : any = [];
+
+  constructor(private http: HttpClient, public nav: NavController) {
     this.id = sessionStorage.getItem("id");
-    this.branch = sessionStorage.getItem("branch");
+    this.branchid = sessionStorage.getItem("branchid");
     this.name = sessionStorage.getItem("name");
     this.brand = sessionStorage.getItem("brand");
     this.dosage = sessionStorage.getItem("dosage");
@@ -35,11 +38,23 @@ export class DetailsPage implements OnInit {
   }
 
   ngOnInit() {
+    this.getBranches();
   }
 
-  selectProduct(id: any, branch:any, name: any, brand: any, dosage: any, type: any, desc: any, price: any, tags: any, avail: any, pic: any) {
+  getBranches(){
+    this.http.get('http://localhost/herb-e-list-v5/backend/getBranches.php').subscribe((response)=>{
+      this.branches = response;
+    });
+  }
+
+  getBranchName(branchId: number): string {
+    const branch = this.branches.find((branch: { BranchID: number; }) => branch.BranchID === branchId);
+    return branch ? branch.BranchName : '';
+  }
+
+  selectProduct(id: any, branchid:any, name: any, brand: any, dosage: any, type: any, desc: any, price: any, tags: any, avail: any, pic: any) {
     sessionStorage.setItem("id", id);
-    sessionStorage.setItem("branch", branch);
+    sessionStorage.setItem("branchid", branchid);
     sessionStorage.setItem("name", name);
     sessionStorage.setItem("brand", brand);
     sessionStorage.setItem("dosage", dosage);

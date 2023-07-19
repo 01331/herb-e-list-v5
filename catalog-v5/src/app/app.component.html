@@ -1,3 +1,29 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu menuId="staff-menu" content-id="staff">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+    <ion-menu-toggle>
+      <ion-list>
+        <ion-item button detail="false" routerLink="/inventory">
+          <p>Inventory</p>
+        </ion-item>
+        <ion-item button detail="false">
+          <p>Profile</p>
+        </ion-item>
+        <ion-item button detail="false">
+          <p>About</p>
+        </ion-item>
+        <ion-item button detail="false" routerLink="/login" routerDirection="back">
+          <p>Sign out</p>
+        </ion-item>
+      </ion-list>
+    </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="staff"></ion-router-outlet>
 </ion-app>

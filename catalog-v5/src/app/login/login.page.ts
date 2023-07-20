@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  accounts: any = [];
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getAccounts();
+  }
+
+  getAccounts() {
+    this.http.get('http://localhost/herb-e-list-v5/backend/getAccounts.php').subscribe((response) => {
+      this.accounts = response;
+    });
   }
 
 }

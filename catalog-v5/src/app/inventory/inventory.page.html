@@ -19,14 +19,14 @@
 <ion-grid class="ion-padding">
   <ion-row>
     <ion-col size="12" *ngFor="let product of products" style="padding: 0x;">
-      <ion-card button style="margin: 0px 0px 5px; padding: 0px;">
+      <ion-card button routerLink="/inventory-details" routerDirection="forward" (click)="navigateWithObj(product)" style="margin: 0px 0px 5px; padding: 0px;">
         <ion-item lines="none" detail style="margin: 0px; padding: 0px;">
             <ion-thumbnail slot="start">
               <img class="thumbnail" style="border-radius: 10px;" alt="{{product.ProdName}}" src="http://localhost/herb-e-list-v5/catalog-v5/src/assets/productPics/{{product.ProductPic}}"/>
             </ion-thumbnail>
             <ion-label>
               <h1>{{product.ProdName}}</h1>
-              <h3>{{product.ProdName}}</h3>
+              <h3>{{product.ProdBrand}}</h3>
             </ion-label>
         </ion-item>
       </ion-card>

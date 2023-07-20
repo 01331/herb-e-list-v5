@@ -1,7 +1,3 @@
-ion-grid {
-    margin-bottom: 65px;
-}
-
 .search {
     margin-bottom: 20px;
 
@@ -20,6 +16,11 @@ ion-grid {
         }
     }
 }
+
+ion-grid {
+    margin-bottom: 65px;
+}
+.grid {
 
 .title {
     display: flex;
@@ -53,4 +54,5 @@ ion-card-title {
     height: 120px;
     width: 100%;
     object-fit: cover;
+}
 }

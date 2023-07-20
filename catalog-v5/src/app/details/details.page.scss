@@ -36,3 +36,44 @@ ion-text {
     margin: 10px 0px;
     text-align: justify;
 }
+
+
+ion-grid {
+    margin-bottom: 65px;
+}
+.grid {
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+
+    h2 {
+        margin: 0 0 0 16px;
+        color: #434343;
+    }
+
+    p {
+        margin: 0 16px 0 0;
+        color: #656565;
+    }
+}
+
+ion-card {
+    margin: 0px 10px 20px 10px !important;
+}
+
+ion-card-title {
+    font-size: 20px !important;
+}
+
+.productImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+}

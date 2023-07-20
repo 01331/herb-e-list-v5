@@ -1,0 +1,38 @@
+ion-toolbar {
+    --ion-background-color: transparent;
+    --ion-toolbar-text-color: white;
+    }
+
+ion-content {
+    --ion-background-color: #e3e3e3;
+}
+
+ion-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+ion-card {
+    margin: -10px 0px 0px 0px !important;
+    padding-bottom: 10px;
+    --ion-background-color: white;
+}
+
+ion-card-header {
+    display: flex;
+    flex-flow: column;
+}
+
+ion-item {
+    --padding-start: 0;
+    --inner-padding-end: 0;
+  }
+
+ion-text {
+    margin: 10px 0px;
+    text-align: justify;
+}

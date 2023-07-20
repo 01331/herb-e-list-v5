@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title color="tertiary">Products</ion-title>
+    <ion-buttons slot="start">
+      <ion-button class="backbtn" color="tertiary" routerLink="/welcome" routerDirection="back">
+        <ion-icon name="chevron-back-outline"></ion-icon>Exit
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -15,9 +20,8 @@
 
   <ion-grid class="ion-padding">
     <ion-row>
-      <ion-col *ngFor="let product of products" style="padding: 0px;">
-        <ion-card button routerLink="/details" routerDirection="forward"
-        (click)="selectProduct(product.ProductID,product.BranchID,product.ProdName,product.ProdBrand,product.Dosage,product.Type,product.Description,product.Price,product.Tags,product.Available,product.ProductPic);">
+      <ion-col class="grid" *ngFor="let product of products" style="padding: 0px;">
+        <ion-card button routerLink="/details" routerDirection="forward" (click)="navigateWithObj(product)">
           <ion-img class="productImg" alt="{{product.ProdName}}" src="http://localhost/herb-e-list-v5/catalog-v5/src/assets/productPics/{{product.ProductPic}}"></ion-img>
           <ion-card-header>
             <ion-card-title>{{product.ProdName}}</ion-card-title>
@@ -26,7 +30,7 @@
         </ion-card>
       </ion-col>
     </ion-row>
-    
+
   </ion-grid>
 
 </ion-content>

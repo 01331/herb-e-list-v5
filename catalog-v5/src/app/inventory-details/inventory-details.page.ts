@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-inventory-details',
@@ -8,16 +9,37 @@ import { Router } from '@angular/router';
 })
 export class InventoryDetailsPage implements OnInit {
 
-  newdata: any = null;
-  constructor(private router: Router) {
-    this.newdata = this.router.getCurrentNavigation()?.extras?.state;
+  products: any = [];
+  branches: any = [];
+  currentProduct: any;
+
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
+    this.getProducts();
+    this.getBranches();
+    const storedProduct = localStorage.getItem('currentProduct');
+    if(storedProduct) {
+      this.currentProduct = JSON.parse(storedProduct);
+    };
   }
 
-  checkWorking() {
-    console.log(this.newdata);
+  getProducts() {
+    this.http.get('http://localhost/herb-e-list-v5/backend/getProducts.php').subscribe((response) => {
+      this.products = response;
+    });
+  }
+
+  getBranches(){
+    this.http.get('http://localhost/herb-e-list-v5/backend/getBranches.php').subscribe((response)=>{
+      this.branches = response;
+    });
+  }
+
+  getBranchName(branchId: number): string {
+    const branch = this.branches.find((branch: { BranchID: number; }) => branch.BranchID === branchId);
+    return branch ? branch.BranchName : '';
   }
 
 }

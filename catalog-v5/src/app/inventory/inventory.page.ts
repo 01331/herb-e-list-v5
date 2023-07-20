@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class InventoryPage implements OnInit {
 
   products : any = [];
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -17,9 +18,13 @@ export class InventoryPage implements OnInit {
 
   getProducts(){
     this.http.get('http://localhost/herb-e-list-v5/backend/getProducts.php').subscribe((response)=>{
-      console.log(response);
       this.products = response;
     });
+  }
+
+  navigateWithObj(currentProduct: any){
+    localStorage.setItem('currentProduct', JSON.stringify(currentProduct));
+    window.location.href = '/inventory-details';
   }
 
 }

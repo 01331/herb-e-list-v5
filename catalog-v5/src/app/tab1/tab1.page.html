@@ -20,7 +20,7 @@
 
   <ion-grid class="ion-padding">
     <ion-row>
-      <ion-col class="grid" *ngFor="let product of products" style="padding: 0px;">
+      <ion-col class="grid" size="6" *ngFor="let product of products" style="padding: 0px;">
         <ion-card button routerLink="/details" routerDirection="forward" (click)="navigateWithObj(product)">
           <ion-img class="productImg" alt="{{product.ProdName}}" src="http://localhost/herb-e-list-v5/catalog-v5/src/assets/productPics/{{product.ProductPic}}"></ion-img>
           <ion-card-header>

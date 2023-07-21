@@ -16,6 +16,7 @@ export class Tab1Page implements OnInit {
   ngOnInit() {
     this.getProducts();
     this.getBranches();
+    console.log(this.products);
   }
 
   getProducts(){

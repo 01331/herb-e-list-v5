@@ -26,9 +26,8 @@
       <ion-list>
         <ion-item><ion-label style="font-weight: 600;">Branch</ion-label>{{ getBranchName(currentProduct.BranchID) }}</ion-item>
         <ion-item><ion-label style="font-weight: 600;">Brand</ion-label>{{currentProduct.ProdBrand}}</ion-item>
-        <ion-item><ion-label style="font-weight: 600;">Type</ion-label>{{currentProduct.Type}}</ion-item>
         <ion-item><ion-label style="font-weight: 600;">Dosage</ion-label>{{currentProduct.Dosage}}</ion-item>
-        <ion-item><ion-text>{{currentProduct.Description}}</ion-text></ion-item>
+        <ion-item><ion-text>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</ion-text></ion-item>
       </ion-list>
     </ion-card-content>
     
@@ -40,7 +39,7 @@
       <ion-col size="12" style="margin-bottom: 10px;">
         <ion-text >More products</ion-text>
       </ion-col>
-      <ion-col class="grid" *ngFor="let product of products" style="padding: 0px;">
+      <ion-col class="grid" size="6" *ngFor="let product of products" style="padding: 0px;">
         <ion-card button routerLink="/details" routerDirection="forward" (click)="navigateWithObj(product)">
           <ion-img class="productImg" alt="{{product.ProdName}}" src="http://localhost/herb-e-list-v5/catalog-v5/src/assets/productPics/{{product.ProductPic}}"></ion-img>
           <ion-card-header>

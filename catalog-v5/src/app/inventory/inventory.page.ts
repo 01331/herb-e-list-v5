@@ -9,11 +9,16 @@ import { HttpClient } from '@angular/common/http';
 export class InventoryPage implements OnInit {
 
   products : any = [];
+  currentAccount : any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getProducts();
+    const storedAccount = localStorage.getItem('currentAccount');
+    if(storedAccount) {
+      this.currentAccount = JSON.parse(storedAccount);
+    };
   }
 
   getProducts(){
@@ -27,4 +32,5 @@ export class InventoryPage implements OnInit {
     window.location.href = '/inventory-details';
   }
 
+  
 }

@@ -28,9 +28,11 @@
         </ion-item>
       </ion-list>
 
-      <ion-button type="submit" [disabled]="!formData.valid" expand="block" class="main-button" routerLink="/inventory" routerDirection="forward">Log-in</ion-button>
+      <div>
+        <ion-button type="submit" [disabled]="!formData.valid" expand="block" class="main-button" routerLink="/inventory" routerDirection="forward">Log-in</ion-button>
+      </div>
       <div *ngIf="EmailAdmin === 'admin' && PassAdmin === 'password'">
-        <ion-button type="submit" [disabled]="!adminData.valid" expand="block" fill="outline" routerLink="/inventory" routerDirection="forward">Admin</ion-button>
+        <ion-button type="submit" [disabled]="!adminData.valid" expand="block" fill="outline" routerLink="/admin-home" routerDirection="forward">Admin</ion-button>
       </div>
     </form>
 

@@ -38,7 +38,6 @@ export class LoginPage implements OnInit {
     this.adminData.valueChanges.subscribe((value) => {
       if (this.adminData.valid) {
         console.log('is admin');
-        this.onAdminValid();
       }
     });
 
@@ -54,7 +53,6 @@ export class LoginPage implements OnInit {
   }
 
   onSubmit() {
-    window.location.href = '/inventory';
   }
 
   validateEmail(fc: FormControl) {
@@ -83,8 +81,7 @@ export class LoginPage implements OnInit {
   onFormValid() {
     const account = this.accounts.find((account: { Email: string;}) => account.Email === this.formData.value.email);
     return account ? localStorage.setItem('currentAccount', JSON.stringify(account)) : null;
+
   }
 
-  onAdminValid() {
-  }
 }
